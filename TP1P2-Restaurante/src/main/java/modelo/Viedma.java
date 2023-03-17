@@ -1,20 +1,35 @@
 package modelo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Viedma implements Tarjeta {
 
+	private final Integer DESCUENTO_COMIDA = 0;
+	private final Integer DESCUENTO_BEBIDA = 0;
+	private final Integer DESCUENTO = 0;
+
+	public Integer getDESCUENTO_COMIDA() {
+		return DESCUENTO_COMIDA;
+	}
+
+	public Integer getDESCUENTO_BEBIDA() {
+		return DESCUENTO_BEBIDA;
+	}
+
+	public Integer getDESCUENTO() {
+		return DESCUENTO;
+	}
+
 	@Override
 	public Double pagarCuenta(Cuenta cuenta, Integer propina) {
 
-		List<Double> lista = new ArrayList<>();
-
-		cuenta.getValores().forEach(x -> lista.add((double) x.valor()));
-
+		List<Producto> lista = cuenta.getValores();
 		Double precio = 0.0;
 
-		precio = lista.stream().reduce(0.0, (x, y) -> x + y);
+		for (Producto producto : lista) {
+			precio = producto.devolvarValor(DESCUENTO);
+		}
+
 		precio *= (1 + propina / 100.0);
 
 		return precio;

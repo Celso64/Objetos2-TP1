@@ -4,12 +4,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import modelo.Bebida;
 import modelo.ComarcaPlus;
+import modelo.Comida;
 import modelo.Cuenta;
 import modelo.Mastercard;
 import modelo.Producto;
 import modelo.Tarjeta;
-import modelo.TipoProducto;
 import modelo.Viedma;
 import modelo.Visa;
 
@@ -21,7 +22,7 @@ class Testing {
 	void ProbandoVisa() {
 
 		TarjetaDeCredito = new Visa();
-		Producto p = new Producto(TipoProducto.BEBIDA, 900);
+		Producto p = new Bebida(900.0);
 		Cuenta c = new Cuenta();
 		c.addProducto(p);
 		Double precio = TarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
@@ -32,7 +33,7 @@ class Testing {
 	@Test
 	void ProbandoMasterCard() {
 		TarjetaDeCredito = new Mastercard();
-		Producto p = new Producto(TipoProducto.COMIDA, 900);
+		Producto p = new Comida(900.0);
 		Cuenta c = new Cuenta();
 		c.addProducto(p);
 		Double precio = TarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
@@ -43,7 +44,7 @@ class Testing {
 	@Test
 	void ProbandoComarcaPlus() {
 		TarjetaDeCredito = new ComarcaPlus();
-		Producto p = new Producto(TipoProducto.COMIDA, 900);
+		Producto p = new Comida(900.0);
 		Cuenta c = new Cuenta();
 		c.addProducto(p);
 		Double precio = TarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
@@ -54,7 +55,7 @@ class Testing {
 	@Test
 	void ProbandoViedma() {
 		TarjetaDeCredito = new Viedma();
-		Producto p = new Producto(TipoProducto.COMIDA, 900);
+		Producto p = new Comida(900.0);
 		Cuenta c = new Cuenta();
 		c.addProducto(p);
 		Double precio = TarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);

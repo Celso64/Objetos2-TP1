@@ -1,4 +1,9 @@
 package modelo;
 
-public record Producto(TipoProducto tipo, Integer valor) {
+public abstract class Producto {
+
+	protected Double valor;
+
+	public abstract Double devolvarValor(Integer descuento);
+
 }
