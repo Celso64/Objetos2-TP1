@@ -1,7 +1,14 @@
 package modelo;
 
-public interface Tarjeta {
+public abstract class Tarjeta {
 
-	Double pagarCuenta(Cuenta cuenta, Integer propina);
+	protected Integer DESCUENTO_COMIDA;
+	protected Integer DESCUENTO_BEBIDA;
+	protected Integer DESCUENTO;
+
+	public Double pagarCuenta(Cuenta cuenta, Integer propina) {
+		Double precio = cuenta.getValor(DESCUENTO + DESCUENTO_BEBIDA, DESCUENTO + DESCUENTO_COMIDA, propina);
+		return precio;
+	}
 
 }

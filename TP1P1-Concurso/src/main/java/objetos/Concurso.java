@@ -33,7 +33,7 @@ public class Concurso {
 		this.participantes.add(p);
 	}
 
-	public Integer getPuntosParticipantes(String nombre) {
+	public Integer getPuntosParticipante(String nombre) {
 		for (Participante p : this.participantes) {
 			if (p.equals(new Participante(nombre))) {
 				return p.getPuntos();

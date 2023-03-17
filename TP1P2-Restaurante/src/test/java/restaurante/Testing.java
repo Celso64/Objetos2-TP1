@@ -9,7 +9,6 @@ import modelo.ComarcaPlus;
 import modelo.Comida;
 import modelo.Cuenta;
 import modelo.Mastercard;
-import modelo.Producto;
 import modelo.Tarjeta;
 import modelo.Viedma;
 import modelo.Visa;
@@ -22,10 +21,10 @@ class Testing {
 	void ProbandoVisa() {
 
 		tarjetaDeCredito = new Visa();
-		Producto p = new Bebida(900.0);
-		Cuenta c = new Cuenta();
-		c.addProducto(p);
-		Double precio = tarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
+		Bebida bebida = new Bebida(900.0);
+		Cuenta cuenta = new Cuenta();
+		cuenta.addProducto(bebida);
+		Double precio = tarjetaDeCredito.pagarCuenta(cuenta, Cuenta.PROPINA_MEDIA);
 
 		assertEquals(899.19, precio);
 	}
@@ -33,10 +32,10 @@ class Testing {
 	@Test
 	void ProbandoMasterCard() {
 		tarjetaDeCredito = new Mastercard();
-		Producto p = new Comida(900.0);
-		Cuenta c = new Cuenta();
-		c.addProducto(p);
-		Double precio = tarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
+		Comida comida = new Comida(900.0);
+		Cuenta cuenta = new Cuenta();
+		cuenta.addProducto(comida);
+		Double precio = tarjetaDeCredito.pagarCuenta(cuenta, Cuenta.PROPINA_MEDIA);
 
 		assertEquals(908.46, precio);
 	}
@@ -44,10 +43,10 @@ class Testing {
 	@Test
 	void ProbandoComarcaPlus() {
 		tarjetaDeCredito = new ComarcaPlus();
-		Producto p = new Comida(900.0);
-		Cuenta c = new Cuenta();
-		c.addProducto(p);
-		Double precio = tarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
+		Comida comida = new Comida(900.0);
+		Cuenta cuenta = new Cuenta();
+		cuenta.addProducto(comida);
+		Double precio = tarjetaDeCredito.pagarCuenta(cuenta, Cuenta.PROPINA_MEDIA);
 
 		assertEquals(908.46, precio);
 	}
@@ -55,10 +54,10 @@ class Testing {
 	@Test
 	void ProbandoViedma() {
 		tarjetaDeCredito = new Viedma();
-		Producto p = new Comida(900.0);
-		Cuenta c = new Cuenta();
-		c.addProducto(p);
-		Double precio = tarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
+		Comida comida = new Comida(900.0);
+		Cuenta cuenta = new Cuenta();
+		cuenta.addProducto(comida);
+		Double precio = tarjetaDeCredito.pagarCuenta(cuenta, Cuenta.PROPINA_MEDIA);
 
 		assertEquals(927.0, precio);
 	}

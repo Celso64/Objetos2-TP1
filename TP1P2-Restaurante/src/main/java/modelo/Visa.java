@@ -1,34 +1,10 @@
 package modelo;
 
-import java.util.List;
+public class Visa extends Tarjeta {
 
-public class Visa implements Tarjeta {
-
-	private final Integer DESCUENTO_COMIDA = 0;
-	private final Integer DESCUENTO_BEBIDA = 3;
-	private final Integer DESCUENTO = 0;
-
-	public Integer getDESCUENTO_COMIDA() {
-		return DESCUENTO_COMIDA;
+	public Visa() {
+		DESCUENTO_COMIDA = 0;
+		DESCUENTO_BEBIDA = 3;
+		DESCUENTO = 0;
 	}
-
-	public Integer getDESCUENTO_BEBIDA() {
-		return DESCUENTO_BEBIDA;
-	}
-
-	public Integer getDESCUENTO() {
-		return DESCUENTO;
-	}
-
-	@Override
-	public Double pagarCuenta(Cuenta cuenta, Integer propina) {
-		List<Producto> lista = cuenta.getValores();
-		Double precio = 0.0;
-		for (Producto p : lista) {
-			precio += p.devolverValor(DESCUENTO_BEBIDA);
-		}
-		precio *= (1.0 + ((double) propina / 100.0));
-		return precio;
-	}
-
 }
