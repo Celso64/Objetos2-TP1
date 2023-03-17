@@ -7,7 +7,11 @@ public class Bebida extends Producto {
 	}
 
 	@Override
-	public Double devolvarValor(Integer descuento) {
-		return (this.valor + this.valor * (descuento / 100));
+	public Double devolverValor(Integer descuento) {
+
+		Double res = this.valor;
+		res -= this.valor * ((double) descuento / 100);
+
+		return (res);
 	}
 }

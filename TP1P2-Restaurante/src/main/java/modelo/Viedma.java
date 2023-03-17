@@ -27,7 +27,7 @@ public class Viedma implements Tarjeta {
 		Double precio = 0.0;
 
 		for (Producto producto : lista) {
-			precio = producto.devolvarValor(DESCUENTO);
+			precio = producto.devolverValor(DESCUENTO);
 		}
 
 		precio *= (1 + propina / 100.0);

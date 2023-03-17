@@ -16,49 +16,49 @@ import modelo.Visa;
 
 class Testing {
 
-	private Tarjeta TarjetaDeCredito;
+	private Tarjeta tarjetaDeCredito;
 
 	@Test
 	void ProbandoVisa() {
 
-		TarjetaDeCredito = new Visa();
+		tarjetaDeCredito = new Visa();
 		Producto p = new Bebida(900.0);
 		Cuenta c = new Cuenta();
 		c.addProducto(p);
-		Double precio = TarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
+		Double precio = tarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
 
 		assertEquals(899.19, precio);
 	}
 
 	@Test
 	void ProbandoMasterCard() {
-		TarjetaDeCredito = new Mastercard();
+		tarjetaDeCredito = new Mastercard();
 		Producto p = new Comida(900.0);
 		Cuenta c = new Cuenta();
 		c.addProducto(p);
-		Double precio = TarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
+		Double precio = tarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
 
 		assertEquals(908.46, precio);
 	}
 
 	@Test
 	void ProbandoComarcaPlus() {
-		TarjetaDeCredito = new ComarcaPlus();
+		tarjetaDeCredito = new ComarcaPlus();
 		Producto p = new Comida(900.0);
 		Cuenta c = new Cuenta();
 		c.addProducto(p);
-		Double precio = TarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
+		Double precio = tarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
 
 		assertEquals(908.46, precio);
 	}
 
 	@Test
 	void ProbandoViedma() {
-		TarjetaDeCredito = new Viedma();
+		tarjetaDeCredito = new Viedma();
 		Producto p = new Comida(900.0);
 		Cuenta c = new Cuenta();
 		c.addProducto(p);
-		Double precio = TarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
+		Double precio = tarjetaDeCredito.pagarCuenta(c, Cuenta.PROPINA_MEDIA);
 
 		assertEquals(927.0, precio);
 	}

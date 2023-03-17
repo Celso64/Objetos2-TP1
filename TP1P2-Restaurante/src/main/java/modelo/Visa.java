@@ -25,7 +25,7 @@ public class Visa implements Tarjeta {
 		List<Producto> lista = cuenta.getValores();
 		Double precio = 0.0;
 		for (Producto p : lista) {
-			precio += p.devolvarValor(DESCUENTO_BEBIDA);
+			precio += p.devolverValor(DESCUENTO_BEBIDA);
 		}
 		precio *= (1.0 + ((double) propina / 100.0));
 		return precio;

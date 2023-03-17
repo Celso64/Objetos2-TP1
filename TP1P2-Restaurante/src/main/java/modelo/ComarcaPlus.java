@@ -6,7 +6,7 @@ public class ComarcaPlus implements Tarjeta {
 
 	private final Integer DESCUENTO_COMIDA = 0;
 	private final Integer DESCUENTO_BEBIDA = 0;
-	private final Integer DESCUENTO = 3;
+	private final Integer DESCUENTO = 2;
 
 	public Integer getDESCUENTO_COMIDA() {
 		return DESCUENTO_COMIDA;
@@ -25,9 +25,9 @@ public class ComarcaPlus implements Tarjeta {
 		List<Producto> lista = cuenta.getValores();
 		Double precio = 0.0;
 		for (Producto p : lista) {
-			precio += p.devolvarValor(DESCUENTO);
+			precio += p.devolverValor(DESCUENTO);
 		}
-		precio *= (1 + propina / 100.0);
+		precio *= (1.0 + (double) propina / 100.0);
 		return precio;
 	}
 

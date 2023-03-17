@@ -25,7 +25,7 @@ public class Mastercard implements Tarjeta {
 		List<Producto> lista = cuenta.getValores();
 		Double precio = 0.0;
 		for (Producto p : lista) {
-			precio += p.devolvarValor(DESCUENTO_COMIDA);
+			precio += p.devolverValor(DESCUENTO_COMIDA);
 		}
 		precio *= (1 + propina / 100.0);
 		return precio;
